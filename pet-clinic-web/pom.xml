@@ -3,7 +3,7 @@
 	<parent>
 		<groupId>ancm.springframework</groupId>
 		<artifactId>sft-pet-clinic</artifactId>
-		<version>0.0.2</version>
+		<version>0.0.3-SNAPSHOT</version>
 	</parent>
 	<artifactId>pet-clinic-web</artifactId>
 	<name>pet-clinic-web</name>
@@ -27,7 +27,7 @@
 		<dependency>
 			<groupId>ancm.springframework</groupId>
 			<artifactId>pet-clinic-data</artifactId>
-			<version>0.0.2</version>
+			<version>0.0.3-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

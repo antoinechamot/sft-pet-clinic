@@ -11,7 +11,7 @@
 	
 	<groupId>ancm.springframework</groupId>
 	<artifactId>sft-pet-clinic</artifactId>
-	<version>0.0.2</version>
+	<version>0.0.3-SNAPSHOT</version>
 	<name>sft-pet-clinic</name>
 	<description>SFT Pet Clinic</description>
 	<packaging>pom</packaging>
@@ -45,7 +45,7 @@
 	
 	<scm>
 		<developerConnection>scm:git:https://github.com/tchame44/sft-pet-clinic.git</developerConnection>
-    <tag>sft-pet-clinic-0.0.2</tag>
+    <tag>HEAD</tag>
   </scm>
 
 </project>
