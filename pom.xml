@@ -46,7 +46,7 @@
 	
 	<scm>
 		<developerConnection>scm:git:https://github.com/tchame44/sft-pet-clinic.git</developerConnection>
-    <tag>HEAD</tag>
+    	<tag>HEAD</tag>
   </scm>
 
 </project>
