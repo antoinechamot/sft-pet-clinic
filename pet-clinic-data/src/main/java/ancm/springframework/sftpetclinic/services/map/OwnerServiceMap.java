@@ -1,8 +1,12 @@
 package ancm.springframework.sftpetclinic.services.map;
 
+import org.springframework.stereotype.Service;
+
 import ancm.springframework.sftpetclinic.model.Owner;
 import ancm.springframework.sftpetclinic.services.OwnerService;
 
+
+@Service
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService{
 
 	@Override
