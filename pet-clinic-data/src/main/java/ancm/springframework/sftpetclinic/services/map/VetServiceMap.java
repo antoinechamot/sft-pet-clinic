@@ -1,9 +1,9 @@
 package ancm.springframework.sftpetclinic.services.map;
 
 import ancm.springframework.sftpetclinic.model.Vet;
-import ancm.springframework.sftpetclinic.services.CrudService;
+import ancm.springframework.sftpetclinic.services.VetService;
 
-public class VetServiceMap  extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long>{
+public class VetServiceMap  extends AbstractMapService<Vet, Long> implements VetService{
 
 
 
