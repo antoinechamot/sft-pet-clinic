@@ -6,7 +6,7 @@ import ancm.springframework.sftpetclinic.model.Speciality;
 import ancm.springframework.sftpetclinic.services.SpecialityService;
 
 @Service
-public class SpecialityServiceMap extends AbstractMapService<Speciality, Long> implements SpecialityService{
+public class SpecialityMapService extends AbstractMapService<Speciality, Long> implements SpecialityService{
 
 	
 
