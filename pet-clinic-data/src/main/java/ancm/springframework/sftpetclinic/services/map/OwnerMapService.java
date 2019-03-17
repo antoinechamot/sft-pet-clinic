@@ -1,5 +1,6 @@
 package ancm.springframework.sftpetclinic.services.map;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import ancm.springframework.sftpetclinic.model.Owner;
@@ -10,25 +11,18 @@ import ancm.springframework.sftpetclinic.services.PetTypeService;
 
 
 @Service
+@Profile({"default","map"})
 public class OwnerMapService extends AbstractMapService<Owner, Long> implements OwnerService{
 
-	
 	private final PetTypeService petTypeService;
 	private final PetService petService;
-
-	
-	
 
 	public OwnerMapService(PetTypeService petTypeService, PetService petService) {
 		super();
 		this.petTypeService = petTypeService;
 		this.petService = petService;
 	}
-
-
-
 	
-
 	@Override
 	public Owner save(Owner object) {
 		
@@ -61,16 +55,10 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
 		
 	}
 
-
-
-
-
 	@Override
 	public Owner findByLastName(String lastName) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-
 
 }
