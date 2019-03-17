@@ -10,10 +10,12 @@ import ancm.springframework.sftpetclinic.model.Pet;
 import ancm.springframework.sftpetclinic.model.PetType;
 import ancm.springframework.sftpetclinic.model.Speciality;
 import ancm.springframework.sftpetclinic.model.Vet;
+import ancm.springframework.sftpetclinic.model.Visit;
 import ancm.springframework.sftpetclinic.services.OwnerService;
 import ancm.springframework.sftpetclinic.services.PetTypeService;
 import ancm.springframework.sftpetclinic.services.SpecialityService;
 import ancm.springframework.sftpetclinic.services.VetService;
+import ancm.springframework.sftpetclinic.services.VisitService;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -22,14 +24,16 @@ public class DataLoader implements CommandLineRunner {
 	private final VetService vetService;
 	private final  PetTypeService petTypeService;
 	private final  SpecialityService specialityService;
+	private final VisitService visitService;
 
 	public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService,
-			SpecialityService specialityService) {
+			SpecialityService specialityService, VisitService visitService) {
 		super();
 		this.ownerService = ownerService;
 		this.vetService = vetService;
 		this.petTypeService = petTypeService;
 		this.specialityService = specialityService;
+		this.visitService = visitService;
 	}
 
 	@Override
@@ -96,6 +100,13 @@ public class DataLoader implements CommandLineRunner {
 		
 		
 		ownerService.save(owner2);
+		
+		Visit visit1 = new Visit();
+		visit1.setPet(pet2);
+		visit1.setDate(LocalDate.now());
+		visit1.setDescription("visit description");
+		
+		visitService.save(visit1);
 		
 	   System.out.println("Owners Loaded");
 	   
