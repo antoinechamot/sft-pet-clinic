@@ -3,7 +3,7 @@
 	<parent>
 		<groupId>ancm.springframework</groupId>
 		<artifactId>sft-pet-clinic</artifactId>
-		<version>0.0.3-SNAPSHOT</version>
+		<version>${revision}</version>
 	</parent>
 	<artifactId>pet-clinic-web</artifactId>
 	<name>pet-clinic-web</name>
@@ -23,7 +23,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
@@ -32,26 +31,21 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>ancm.springframework</groupId>
 			<artifactId>pet-clinic-data</artifactId>
-			<version>0.0.3-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 
-		
-		
 		<!-- webjars -->
 	    <dependency>
 	      <groupId>org.webjars</groupId>
@@ -73,8 +67,6 @@
 	      <version>${webjars-bootstrap.version}</version>
 	    </dependency>
 	    <!-- end of webjars -->
-		
-		
 	</dependencies>
 	
 	<build>
