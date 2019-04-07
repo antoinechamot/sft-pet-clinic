@@ -122,7 +122,7 @@
 		        </dependencies>
 		      </plugin>
 		      
-		      <plugin>
+		    <!--   <plugin>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<dependencies>
 					<dependency>
@@ -131,7 +131,7 @@
 						<version>${junit-platform.version}</version>
 					</dependency>
 				</dependencies>
-			</plugin>
+			</plugin> -->
 		</plugins>
 	</build>
 </project>
