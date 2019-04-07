@@ -30,7 +30,7 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - circleci-sft-pet-clinic-
 
-      - run: mvn de.qaware.maven:go-offline-maven-plugin:resolve-dependencies # gets the project dependencies
+      - run: mvn de.qaware.maven:go-offline-maven-plugin:resolve-dependencies # gets the project dependencies / alternative : mvn install -DskipTests
 
       - save_cache: # saves the project dependencies
           paths:
