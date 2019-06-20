@@ -2,6 +2,7 @@ package ancm.springframework.sftpetclinic.model;
 
 import java.time.LocalDate;
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -46,7 +47,7 @@ public class Pet extends BaseEntity{
 		this.petType = petType;
 		this.owner = owner;
 		this.birthDate = birthDate;
-		this.visits = visits;
+		this.visits = Optional.ofNullable(visits).orElse(this.visits);
 	}
 	
 	
