@@ -15,7 +15,10 @@
 		<revision>0.0.3-SNAPSHOT</revision>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>1.8</java.version>
+		<java.version>11</java.version>
+		<maven.compiler.sources>${java.version}</maven.compiler.sources>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
+		<jaxb.version>2.3.0</jaxb.version>
 	</properties>
 	
 	<name>sft-pet-clinic</name>
@@ -32,10 +35,27 @@
 				<artifactId>pet-clinic-data</artifactId>
 				<version>${revision}</version>
 			</dependency>
-		
-		
+			
 		</dependencies>
 	</dependencyManagement>
+	
+	<dependencies>
+		<dependency>
+				<groupId>javax.xml.bind</groupId>
+				<artifactId>jaxb-api</artifactId>
+				<version>${jaxb.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.sun.xml.bind</groupId>
+				<artifactId>jaxb-core</artifactId>
+				<version>${jaxb.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.sun.xml.bind</groupId>
+				<artifactId>jaxb-impl</artifactId>
+				<version>${jaxb.version}</version>
+			</dependency>
+	</dependencies>
 
 	
 	<modules>
@@ -79,7 +99,18 @@
 	                <useSystemClassLoader>false</useSystemClassLoader>
 	            </configuration>
 	        </plugin>
-			
+	        <plugin>
+	        	<groupId>org.apache.maven.plugins</groupId>
+	        	<artifactId>maven-failsafe-plugin</artifactId>
+	        	<executions>
+	        		<execution>
+	        		<goals>
+	        			<goal>integration-test</goal>
+	        			<goal>verify</goal>
+	        		</goals>
+	        		</execution>
+	        	</executions>
+	        </plugin>
 		</plugins>
 		
 	</build>
