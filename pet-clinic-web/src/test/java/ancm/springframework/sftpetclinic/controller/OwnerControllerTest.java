@@ -17,6 +17,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import org.assertj.core.util.Arrays;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -134,4 +135,21 @@ class OwnerControllerTest {
 		verify(ownerService).save(ArgumentMatchers.any());
 	
 	}
+	
+	@Test
+	void processFindFormEmptyReturnMany() throws Exception {
+		List<Owner> returnOwners = new ArrayList<Owner>();
+		returnOwners.add(Owner.builder().id(1L).build());
+		returnOwners.add(Owner.builder().id(2L).build());
+		
+		when(ownerService.findAllByLastNameLike(ArgumentMatchers.anyString()))
+		.thenReturn(returnOwners);
+		
+		mockMvc.perform(get("/owners").param("lastName", ""))
+		.andExpect(status().isOk())
+		.andExpect(view().name("owners/ownersList"))
+		.andExpect(model().attribute("selections", hasSize(2)));
+		
+	}
+	
 }
